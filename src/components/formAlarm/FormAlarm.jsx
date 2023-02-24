@@ -25,25 +25,25 @@ const FormAlarm = ({ setAlarm, setMessage, message }) => {
     return (
         <div className={styles.container__form}>
             <div>
-                <h1>Here you can put an special alarm:</h1>
+                <h1>Here, you can set an <span className={styles.title__2}>special alarm:</span></h1>
                 <form
                     onSubmit={handleSubmit}
                 >
-                    <div>
-                        <label className='input__title'>Put your alarm message:</label>
-                        <input ref={messageRef} name="message" type="text" placeholder="Time to stop running..." required />
+                    <div className={styles.container__input}>
+                        <label className={styles.input__label}>Put your alarm message:</label>
+                        <input className={styles.input__value__text} ref={messageRef} name="message" type="text" placeholder="Time to stop running..." required />
                     </div>
-                    <div>
-                        <label className='input__title'>Select the hours:</label>
-                        <input ref={hoursRef} name="hours" type="number" placeholder="0" min="0" max="99" />
+                    <div className={styles.container__input}>
+                        <label className={styles.input__label}>Select the hours:</label>
+                        <input className={styles.input__value__number} ref={hoursRef} name="hours" type="number" placeholder="Hrs" min="0" max="99" />
                     </div>
-                    <div>
-                        <label className='input__title'>Select the minutes:</label>
-                        <input ref={minutesRef} name="minutes" type="number" placeholder="0" min="0" max="59" />
+                    <div className={styles.container__input}>
+                        <label className={styles.input__label}>Select the minutes:</label>
+                        <input className={styles.input__value__number} ref={minutesRef} name="minutes" type="number" placeholder="Min" min="0" max="59" />
                     </div>
-                    <div>
-                        <label className='input__title'>Select the seconds:</label>
-                        <input ref={secondsRef} name="seconds" type="number" placeholder="0" min="0" max="59" />
+                    <div className={styles.container__input}>
+                        <label className={styles.input__label}>Select the seconds:</label>
+                        <input className={styles.input__value__number} ref={secondsRef} name="seconds" type="number" placeholder="Sec" min="0" max="59" />
                     </div>
                     <div className={styles.div__form__button}>
                         <input 
@@ -55,8 +55,9 @@ const FormAlarm = ({ setAlarm, setMessage, message }) => {
                 </form>
 
                 { message && (
-                    <div>
-                    Your alarm was set successfully
+                    <div className={styles.success__message}>
+                        Your alarm was set successfully. <br />
+                        <span className={styles.success__message__2}>Now you can start the stopwatch</span>
                     </div> 
                 )} 
             </div>
