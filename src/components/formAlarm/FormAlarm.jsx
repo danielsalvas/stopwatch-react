@@ -25,7 +25,9 @@ const FormAlarm = ({ setAlarm, setMessage, message }) => {
     return (
         <div className={styles.container__form}>
             <div>
-                <h1 className={styles.title__1}>Here, you can set an <span className={styles.title__2}>special alarm:</span></h1>
+                <h1 className={styles.title__form}>
+                    <span className={styles.title__1}>Here, you can set an </span>
+                    <span className={styles.title__2}>special alarm:</span></h1>
                 
                 { message && (
                     <div className={styles.success__message}>

@@ -1,6 +1,13 @@
+.title__form {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+}
+
 .title__2 {
     color: #1F314B;
     font-size: 40px;
+    margin-left: 5px;
 }
 
 .container__image{
@@ -116,7 +123,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .title__1 {
+    .title__form {
         font-size: 22px;
         text-align: center;
     }
@@ -125,3 +132,11 @@
         font-size: 28px;
     }
 }
+
+@media screen and (max-width: 640px) {
+    .title__form {
+        display: grid;
+    }
+
+}
+
