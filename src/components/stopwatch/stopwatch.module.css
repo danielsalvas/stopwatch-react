@@ -1,6 +1,15 @@
 .container__time {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  color: #fff;
+  height: 325px;
+  width: 325px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, 
+    rgba(255,113,12,0) 69%,
+    #EE6E70 72%);
   }
   
   .time__title {
@@ -8,12 +17,13 @@
   }
   
   .time__value {
-    font-size: 30px;
+    font-size: 50px;
   }
   
   .colon__division {
     position: relative;
-    top: 20px;
+    font-size: 25px;
+    bottom: 15px;
   }
   
   .time__flex {

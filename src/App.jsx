@@ -39,24 +39,30 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container__app">
       <div className='title'>
-        STOPWATCH PRO
+        STOPWATCH <span className='title__2'>PRO</span> 
       </div>
       
-      <Stopwatch time={time} />
-      
-      <div className='container__buttons'>
-          {running ? (
-            <button onClick={() => {setRunning(false)}} className='button__stopwatch'>Stop</button>
-          ) : (
-            <button onClick={() => {setRunning(true)}} className='button__stopwatch'>Start</button>
-          )} 
+      <div className='container__layout'>
+        <div className='container__stopwatch'>
+          <Stopwatch time={time} />
+          
+          <div className='container__buttons'>
+              {running ? (
+                <button onClick={() => {setRunning(false)}} className='button__stopwatch'><i className="fa-solid fa-stop"></i></button>
+              ) : (
+                <button onClick={() => {setRunning(true)}} className='button__stopwatch'><i className="fa-solid fa-play"></i></button>
+              )} 
 
-            <button onClick={() => {handleReset()}} className='button__stopwatch'>Reset</button>
+                <button onClick={() => {handleReset()}} className='button__stopwatch'><i className="fa-solid fa-rotate-right"></i></button>
+          </div>
+        </div>
+
+        <div>
+         <FormAlarm setAlarm={setAlarm} setMessage={setMessage} message={message} />
+        </div>
       </div>
-
-      <FormAlarm setAlarm={setAlarm} setMessage={setMessage} />
 
     </div>
   )
