@@ -40,7 +40,7 @@ const FormAlarm = ({ setAlarm, setMessage, message }) => {
                     onSubmit={handleSubmit}
                 >
                     <div className={styles.container__input}>
-                        <label className={styles.input__label}>Put your alarm message:</label>
+                        <label className={styles.input__label}>Set your alarm message:</label>
                         <input className={styles.input__value__text} ref={messageRef} name="message" type="text" placeholder="Time to stop running..." required />
                     </div>
                     <div className={styles.container__input}>

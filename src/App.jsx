@@ -25,6 +25,7 @@ function App() {
     if (alarm !== null) {
       setTimeout(() => {
         alert(message)
+        setMessage('')
       }, alarm + 11);  //We add 11 milliseconds for the variation of the calculations
     }
 
