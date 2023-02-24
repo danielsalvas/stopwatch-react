@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 600px;
+  height: 100%;
 }
 
 .title {
@@ -51,4 +51,21 @@
 .button__stopwatch:hover{
   background-color: #EE6E70;
   color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .container__layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title__2 {
+    color: #EE6E70;
+    font-weight: bold;
+    font-size: 60px;
+  }
 }

@@ -33,3 +33,9 @@
     justify-content: center;
     margin: 10px 10px; 
   }
+
+  @media screen and (max-width: 1024px) {
+    .time__value {
+      font-size: 40px;
+    }
+}

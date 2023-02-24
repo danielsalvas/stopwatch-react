@@ -25,7 +25,15 @@ const FormAlarm = ({ setAlarm, setMessage, message }) => {
     return (
         <div className={styles.container__form}>
             <div>
-                <h1>Here, you can set an <span className={styles.title__2}>special alarm:</span></h1>
+                <h1 className={styles.title__1}>Here, you can set an <span className={styles.title__2}>special alarm:</span></h1>
+                
+                { message && (
+                    <div className={styles.success__message}>
+                        Your alarm was set successfully. <br />
+                        <span className={styles.success__message__2}>Now you can start the stopwatch</span>
+                    </div> 
+                )} 
+                
                 <form
                     onSubmit={handleSubmit}
                 >
@@ -53,13 +61,6 @@ const FormAlarm = ({ setAlarm, setMessage, message }) => {
                         />
                     </div>
                 </form>
-
-                { message && (
-                    <div className={styles.success__message}>
-                        Your alarm was set successfully. <br />
-                        <span className={styles.success__message__2}>Now you can start the stopwatch</span>
-                    </div> 
-                )} 
             </div>
             
             <div className={styles.container__image}>
