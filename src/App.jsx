@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from 'react'
+import Stopwatch from './components/stopwatch/Stopwatch'
 import './App.css'
 
 function App() {
   const [time, setTime] = useState(0)
   const [running, setRunning] = useState(false)
-
+  
   const intervalRef = useRef();
 
   useEffect(() => {
@@ -20,38 +21,24 @@ function App() {
     return () => clearInterval(intervalRef.current)
     
   }, [running])
-  
+
+  function handleReset() {
+    setTime(0)
+    setRunning(false)
+  }
 
   return (
     <div className="App">
       <div className='title'>
         STOPWATCH PRO
       </div>
-      <div className='container__time'>
-        <div className='time__flex'>
-          <span className='time__value'>{("0" + Math.floor(( time / 3600000) % 60 )).slice(-2)}</span>
-          <p className='time__title'>HRS</p>
-        </div>
-        <span className='colon__division'>:</span>
-        <div className='time__flex'>
-          <span className='time__value'>{("0" + Math.floor(( time / 60000) % 60 )).slice(-2)}</span>
-          <p className='time__title'>MIN</p>
-        </div>
-        <span className='colon__division'>:</span>
-        <div className='time__flex'>
-          <span className='time__value'>{("0" + Math.floor(( time / 1000) % 60 )).slice(-2)}</span>
-          <p className='time__title'>SEC</p>
-        </div>
-        <span className='colon__division'>:</span>
-        <div className='time__flex'>
-          <span className='time__value'>{("0" + (( time / 10) % 100 )).slice(-2)}</span>
-          <p className='time__title'>MIL</p>
-        </div>
-      </div>
+      
+      <Stopwatch time={time} />
+      
       <div className='container__buttons'>
           <button onClick={() => {setRunning(true)}} className='button__stopwatch'>Start</button>
           <button onClick={() => {setRunning(false)}} className='button__stopwatch'>Stop</button>
-          <button onClick={() => {setTime(0)}} className='button__stopwatch'>Reset</button>
+          <button onClick={() => {handleReset()}} className='button__stopwatch'>Reset</button>
       </div>
     </div>
   )

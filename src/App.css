@@ -5,36 +5,6 @@
   font-weight: bold;
 }
 
-.container__time {
-  display: flex;
-  justify-content: center;
-}
-
-.time__title {
-  font-size: 10px;
-}
-
-.time__value {
-  font-size: 30px;
-}
-
-.colon__division {
-  position: relative;
-  top: 20px;
-}
-
-.time__container {
-  display: flex;
-}
-
-.time__flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 10px; 
-}
-
 .container__buttons {
   display: flex;
   justify-content: center;
