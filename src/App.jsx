@@ -7,6 +7,8 @@ function App() {
   const [time, setTime] = useState(0)
   const [running, setRunning] = useState(false)
   const [alarm, setAlarm] = useState(null)
+  const [message, setMessage] = useState('')
+
   const intervalRef = useRef();
 
   useEffect(() => {
@@ -22,7 +24,7 @@ function App() {
 
     if (alarm !== null) {
       setTimeout(() => {
-        console.log('its time');
+        alert(message)
       }, alarm);
     }
 
@@ -33,6 +35,7 @@ function App() {
   function handleReset() {
     setTime(0)
     setRunning(false)
+    setAlarm(null)
   }
 
   return (
@@ -53,7 +56,7 @@ function App() {
             <button onClick={() => {handleReset()}} className='button__stopwatch'>Reset</button>
       </div>
 
-      <FormAlarm setAlarm={setAlarm} />
+      <FormAlarm setAlarm={setAlarm} setMessage={setMessage} />
 
     </div>
   )
