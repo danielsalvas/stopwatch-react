@@ -20,7 +20,7 @@ const FormAlarm = ({ setAlarm, setMessage }) => {
 
         messageRef.current.value = ''
         hoursRef.current.value = 0
-        minutesRef.current.value
+        minutesRef.current.value = 0
         secondsRef.current.value = 0
     }
 
@@ -34,7 +34,7 @@ const FormAlarm = ({ setAlarm, setMessage }) => {
             >
                 <div>
                     <label className='input__title'>Put your alarm message:</label>
-                    <input ref={messageRef} name="message" type="text" placeholder="Time to stop running..." />
+                    <input ref={messageRef} name="message" type="text" placeholder="Time to stop running..." required />
                 </div>
                 <div>
                     <label className='input__title'>Select the hours:</label>

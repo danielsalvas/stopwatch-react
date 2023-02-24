@@ -25,7 +25,7 @@ function App() {
     if (alarm !== null) {
       setTimeout(() => {
         alert(message)
-      }, alarm);
+      }, alarm + 11);  //We add 11 milliseconds for the variation of the calculations
     }
 
     return () => clearInterval(intervalRef.current)

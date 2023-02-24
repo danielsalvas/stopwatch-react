@@ -1,6 +1,7 @@
 import styles from './stopwatch.module.css'
 
 const Stopwatch = ({time}) => {
+    
   return (
     <div className={styles.container__time}>
       <div className={styles.time__flex}>
