@@ -9,7 +9,7 @@ function App() {
   const [alarm, setAlarm] = useState(null)
   const [message, setMessage] = useState('')
 
-  const intervalRef = useRef();
+  let intervalRef = useRef();
 
   useEffect(() => {
 
