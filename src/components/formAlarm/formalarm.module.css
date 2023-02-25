@@ -137,6 +137,13 @@
     .title__form {
         display: grid;
     }
-
+    .input__value__number {
+        border-radius: 10px;
+        background-color: transparent;
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        border: solid 2px black;
+    }
 }
 

@@ -4,7 +4,7 @@ import Stopwatch from './components/stopwatch/Stopwatch'
 import FormAlarm from './components/formAlarm/FormAlarm'
 
 function App() {
-  const [time, setTime] = useState(0)
+  const [time, setTime] = useState( { ms: 0, sec: 0, min: 0, hrs: 0 } )
   const [running, setRunning] = useState(false)
   const [alarm, setAlarm] = useState(null)
   const [message, setMessage] = useState('')
@@ -15,7 +15,26 @@ function App() {
 
     if (running) {
       intervalRef.current = setInterval(() => {
-        setTime((prevTime) => prevTime + 10)
+        setTime((prevTime) => {
+        let ms= prevTime.ms + 1;
+        let sec = prevTime.sec;
+        let min = prevTime.min;
+        let hrs = prevTime.hrs;
+
+        if (ms === 100) {
+          ms = 0 ;
+          sec = prevTime.sec + 1;
+        }
+        if (sec === 60) {
+          sec = 0 ;
+          min = prevTime.min + 1;
+        }
+        if (min === 60) {
+          min = 0 ;
+          hrs = prevTime.hrs + 1;
+        }
+        return { ms, sec, min, hrs}
+      });
       }, 10);
 
     } else if (!running) {
@@ -26,7 +45,7 @@ function App() {
       setTimeout(() => {
         alert(message)
         setMessage('')
-      }, alarm + 11);  //We add 11 milliseconds for the variation of the calculations
+      }, alarm + 7);  //We add 7 milliseconds for the variation of the calculations
     }
 
     return () => clearInterval(intervalRef.current)
@@ -34,7 +53,7 @@ function App() {
   }, [running])
 
   function handleReset() {
-    setTime(0)
+    setTime({ ms: 0, sec: 0, min: 0, hrs: 0 })
     setRunning(false)
     setAlarm(null)
   }

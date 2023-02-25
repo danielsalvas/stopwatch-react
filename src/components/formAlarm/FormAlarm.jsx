@@ -44,15 +44,15 @@ const FormAlarm = ({ setAlarm, setMessage, message }) => {
                         <input className={styles.input__value__text} ref={messageRef} name="message" type="text" placeholder="Time to stop running..." required />
                     </div>
                     <div className={styles.container__input}>
-                        <label className={styles.input__label}>Select the hours:</label>
+                        <label className={styles.input__label}>Set the hours:</label>
                         <input className={styles.input__value__number} ref={hoursRef} name="hours" type="number" placeholder="Hrs" min="0" max="99" />
                     </div>
                     <div className={styles.container__input}>
-                        <label className={styles.input__label}>Select the minutes:</label>
+                        <label className={styles.input__label}>Set the minutes:</label>
                         <input className={styles.input__value__number} ref={minutesRef} name="minutes" type="number" placeholder="Min" min="0" max="59" />
                     </div>
                     <div className={styles.container__input}>
-                        <label className={styles.input__label}>Select the seconds:</label>
+                        <label className={styles.input__label}>Set the seconds:</label>
                         <input className={styles.input__value__number} ref={secondsRef} name="seconds" type="number" placeholder="Sec" min="0" max="59" />
                     </div>
                     <div className={styles.div__form__button}>
