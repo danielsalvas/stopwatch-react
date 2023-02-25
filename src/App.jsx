@@ -5,7 +5,7 @@ import FormAlarm from './components/formAlarm/FormAlarm'
 
 function App() {
 
-  //Constants and Variables
+  //Constants, Variables and States
 
   const [time, setTime] = useState( { ms: 0, sec: 0, min: 0, hrs: 0 } )
   const [running, setRunning] = useState(false)
@@ -43,7 +43,7 @@ function App() {
       setTimeout(() => {
         alert(message)
         setMessage('')
-      }, alarm - 5);
+      }, alarm - 10);
     }
   };
 
@@ -55,8 +55,10 @@ function App() {
   };
 
   function handleReset() {
-    setTime({ ms: 0, sec: 0, min: 0, hrs: 0 })
+
+    clearInterval(intervalRef.current)
     setRunning(false)
+    setTime({ ms: 0, sec: 0, min: 0, hrs: 0 })
     setAlarm(null)
   }
 
